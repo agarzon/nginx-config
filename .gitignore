@@ -1,0 +1,13 @@
+conf.d/*
+fastcgi_params
+koi-utf
+koi-win
+mime.types
+modules
+nginx.conf
+scgi_params
+sites-enabled/*
+!sites-available/empty
+uwsgi_params
+win-utf
+

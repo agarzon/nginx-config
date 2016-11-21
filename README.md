@@ -3,8 +3,9 @@
 Easy to understand and extend Nginx configuration template
 
 ## Features
- * GZIP support
- * PHP Support
+ * GZIP compression support
+ * PHP handling support
+ * Cache for static files
  * It never replaces any built-in configuration. Upgrading your Nginx will be always safe.
 
 ## Installation
@@ -15,12 +16,11 @@ Add this line at end of you **/etc/nginx/nginx.conf**:
     include /etc/nginx/sites-enabled/*.conf;
 ```
 
-
 ## Usage
 
-To create a site, add a file with extension **.conf** in **sites-enabled/** folder, as example:
+To create a site, add a file with extension **.conf** in **sites-enabled/** folder. Example:
 
-**example.conf**
+**/etc/nginx/sites-enabled/example.conf**
 
 ```nginx
 server
@@ -29,9 +29,9 @@ server
     server_name     mywebsite.com;
     root            /var/www/html/project/folder/;
     include templates/default.conf;
-    include templates/php.conf;
     include templates/gzip.conf;
+    include templates/php.conf;
+    include templates/static-cache.conf;
 }
 
 ```
-

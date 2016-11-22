@@ -7,7 +7,6 @@ modules
 nginx.conf
 scgi_params
 sites-enabled/*
-!sites-available/empty
+!sites-enabled/empty
 uwsgi_params
 win-utf
-

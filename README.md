@@ -25,9 +25,9 @@ To create a site, add a file with extension **.conf** in **sites-enabled/** fold
 ```nginx
 server
 {
-    listen          80;
-    server_name     mywebsite.com;
-    root            /var/www/html/project/folder/;
+    listen 80;
+    server_name mywebsite.com;
+    root /var/www/html/project/folder/;
     include templates/default.conf;
     include templates/gzip.conf;
     include templates/php.conf;

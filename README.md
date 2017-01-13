@@ -1,4 +1,4 @@
-# Nginx Template
+# Nginx Configuration Template
 
 Easy to understand and extend Nginx configuration template
 
@@ -18,7 +18,6 @@ Add this line at end of you **/etc/nginx/nginx.conf**:
 ```
 
 ## Usage
-
 To create a site, add a file with extension **.conf** in **sites-enabled/** folder. Example:
 
 **/etc/nginx/sites-enabled/example.conf**

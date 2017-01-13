@@ -6,7 +6,8 @@ Easy to understand and extend Nginx configuration template
  * GZIP compression support
  * PHP handling support
  * Cache for static files
- * It never replaces any built-in configuration. Upgrading your Nginx will be always safe.
+ * SSL support with http2
+ * It never will replace any built-in configuration. Upgrading your Nginx will be always safe.
 
 ## Installation
 Just put the code in your **/etc/nginx**

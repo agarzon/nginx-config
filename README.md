@@ -35,3 +35,24 @@ server
 }
 
 ```
+
+## Create the Self-Signed SSL Certificate
+```
+sudo openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt
+```
+
+And complete the prompt:
+```
+Country Name (2 letter code) [XX]:CA
+State or Province Name (full name):Quebec
+Locality Name (eg, city) [Default City]:Montreal
+Organization Name (eg, company) [Default Company Ltd]:ACME
+Organizational Unit Name (eg, section) []:
+Common Name (eg, your name or your server's hostname) []:*.domain.com
+Email Address []:
+```
+
+Include in your nginx configuration file:
+```nginx
+include templates/ssl.conf;
+```

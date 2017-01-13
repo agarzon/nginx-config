@@ -1,5 +1,6 @@
 conf.d/*
 fastcgi_params
+fastcgi.conf
 koi-utf
 koi-win
 mime.types

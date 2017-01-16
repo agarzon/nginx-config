@@ -12,11 +12,6 @@ Easy to understand and extend Nginx configuration template
 ## Installation
 Just put the code in your **/etc/nginx**
 
-Add this line at end of you **/etc/nginx/nginx.conf**:
-```nginx
-    include /etc/nginx/sites-enabled/*.conf;
-```
-
 ## Usage
 To create a site, add a file with extension **.conf** in **sites-enabled/** folder. Example:
 
@@ -25,7 +20,6 @@ To create a site, add a file with extension **.conf** in **sites-enabled/** fold
 ```nginx
 server
 {
-    listen 80;
     server_name mywebsite.com;
     root /var/www/html/project/folder/;
     include templates/default.conf;

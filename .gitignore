@@ -1,4 +1,4 @@
-!conf.d/sites.conf
+conf.d/default.conf
 fastcgi_params
 fastcgi.conf
 koi-utf

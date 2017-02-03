@@ -9,9 +9,8 @@ nginx.conf
 scgi_params
 sites-enabled/*
 !sites-enabled/empty
+ssl/*
 !ssl/empty
 uwsgi_params
 win-utf
 *.default
-ssl/*.key
-ssl/*.crt

@@ -7,6 +7,7 @@ Easy to understand and extend Nginx configuration template
  * PHP handling support
  * Cache for static files
  * SSL support with http2
+ * Stronger cypher. SSL rating A+.
  * It never will replace any built-in configuration. Upgrading your Nginx will be always safe.
 
 ## Installation
@@ -26,6 +27,7 @@ server
     include templates/gzip.conf;
     include templates/php.conf;
     include templates/static-cache.conf;
+    include templates/ssl.conf;
 }
 
 ```
@@ -46,7 +48,16 @@ Common Name (eg, your name or your server's hostname) []:*.domain.com
 Email Address []:
 ```
 
+## Generate a dhparam key for stronger security
+```
+openssl dhparam -out /etc/nginx/ssl/dhparams.pem 2048
+```
+
 Include in your nginx configuration file:
 ```nginx
-include templates/ssl.conf;
+
+    listen          443 ssl http2;
+
+    ssl_certificate /etc/nginx/ssl/nginx.crt;
+    ssl_certificate_key /etc/nginx/ssl/nginx.key;
 ```

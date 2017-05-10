@@ -19,10 +19,23 @@ To create a site, add a file with extension **.conf** in **sites-enabled/** fold
 **/etc/nginx/sites-enabled/example.conf**
 
 ```nginx
+# Force HTTPS
+{
+    server_name     mywebsite.com;
+    return          301 https://$server_name$request_uri;
+}
+
 server
 {
-    server_name mywebsite.com;
-    root /var/www/html/project/folder/;
+    server_name     mywebsite.com;
+    root            /var/www/$server_name/;
+
+    listen          443 ssl http2;
+    ssl_certificate /etc/nginx/ssl/nginx.crt;
+    ssl_certificate_key /etc/nginx/ssl/nginx.key;
+
+    access_log /var/log/nginx/mywebsite.com.log combined buffer=10k flush=1m;
+    error_log /var/log/nginx/mywebsite.com.error.log error;
 
     include templates/default.conf;
     #include templates/php.conf;
@@ -53,13 +66,4 @@ Email Address []:
 ## Generate a dhparam key for stronger security
 ```
 openssl dhparam -out /etc/nginx/ssl/dhparams.pem 2048
-```
-
-Include in your nginx configuration file:
-```nginx
-
-    listen          443 ssl http2;
-
-    ssl_certificate /etc/nginx/ssl/nginx.crt;
-    ssl_certificate_key /etc/nginx/ssl/nginx.key;
 ```

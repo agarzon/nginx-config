@@ -37,6 +37,8 @@ server
     access_log /var/log/nginx/mywebsite.com.log combined buffer=10k flush=1m;
     error_log /var/log/nginx/mywebsite.com.error.log error;
 
+    set $APPLICATION_ENV production;
+
     include templates/default.conf;
     include templates/php.conf;
     #include templates/no-php.conf;

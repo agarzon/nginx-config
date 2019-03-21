@@ -42,6 +42,7 @@ server
     include templates/default.conf;
     include templates/php.conf;
     #include templates/no-php.conf;
+    #include templates/limits.conf;
     include templates/gzip.conf;
     include templates/static-cache.conf;
     include templates/ssl.conf;
